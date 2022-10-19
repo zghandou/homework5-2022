@@ -1,0 +1,155 @@
+/*to turn in hw5/"something".html */
+
+#logo{ /* step 1*/
+    width:475px;
+    animation: hw5_move 5s;
+}
+
+@keyframes hw5_move { 
+    from{width:25px;}
+    to{width:475px;}
+    
+}
+
+body{ /* step 2 */
+    font-family: 'Poppins' , 'serif';
+    background-color:#f1f1f1; 
+    background-image: url("../images/concrete_seamless.png");
+}
+
+header{ /* step 3 */
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+
+}
+
+.nav_links{ /* step 4: makes links look correct*/
+    flex-direction: column;
+}
+
+.nav_links a:visited{ /* step 5: makes the color remains
+     the same blue even after visiting the link */
+  color: #0101ED;
+
+}
+
+.card > header{ /* step 6 */
+    background-color: #288088;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #45adad;
+    padding:20px 0 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card { /*step 7 this along with step 8 rule how 
+    the 3 boxs look and their width look*/
+    flex-basis: 450px;
+    flex-direction:column;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+}
+
+.pricing{ /*step 8*/
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /*text-align:center;*/
+}
+.gallery img{  /*step 9*/
+border-color:#50C7C7;
+border-width: 10px;
+border-style: solid;
+margin: 10px;
+width: 300px;
+
+} 
+.gallery{ /* step 10: makes gallery spaced like example.
+      p.s: use display flex whenevr justify is used*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+@media screen and (min-width:900px){
+
+header{ /* step 11*/ 
+    display:flex;
+    flex-flow: row wrap; /*combines wrap and direction*/
+    justify-content: space-between;
+
+}
+
+.nav_links{
+    display:flex;
+    flex-direction:row;
+}
+.card{ /* step 12*/ 
+    flex-basis: 275px;
+}
+.pricing{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+body > header{ /*step 13: makes the header visible when scrolling*/
+     position: sticky; top: 0;
+
+}
+}
+@media (prefers-reduced-motion){
+
+    #logo{ /*step 14*/
+        animation:none;
+
+    }
+}
+
+@media print{
+    body{ /*step 15,16*/
+        font-family:"Arial", "Helvetica";
+        background-image: none;
+    }
+
+    nav{ /*step 17*/
+        width:100%
+
+    }
+    .nav_links{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content:space-between;
+        justify-content:space-around;
+
+    
+    }
+    .pricing{ /*step 18*/
+        flex-direction:row;
+        flex-wrap:nowrap;
+        align-items: flex-end;
+
+    }
+    .card{ /*step 19*/
+        flex-basis: 325px;
+        border-style: solid;
+        border-color: #45addd;
+        border-width: 2px;
+    }
+    #gallery{ /*step 20: hides gallery pics when printed*/
+        display:none;
+    }
+    .gallery{
+        display:none;
+    }
+    .card li:nth-child(2n)::after{ /*step 21*/
+        content: "👍"
+    }
+
+
+}
